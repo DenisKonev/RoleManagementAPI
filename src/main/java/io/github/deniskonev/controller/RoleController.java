@@ -45,6 +45,7 @@ public class RoleController {
      * @return RoleResponseDTO или статус 404, если роль не найдена
      */
     @GetMapping("/{id}")
+    @SuppressWarnings("LoggingSimilarMessage")
     public ResponseEntity<RoleResponseDTO> getRoleById(@PathVariable Long id) {
         log.debug("Входящий запрос: GET /{}/{}", BASE_API + ROLES, id);
         Optional<RoleResponseDTO> roleDTOOptional = roleService.getRoleById(id);
